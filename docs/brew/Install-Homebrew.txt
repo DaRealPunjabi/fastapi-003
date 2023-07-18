@@ -1,0 +1,27 @@
+
+Check if Homebrew is installed:
+$ brew
+
+Brew install
+Homebrew provides an installation script you can download and run with a single command (check that it hasn't changed at the Homebrew site). This is the easiest way to install Homebrew.
+
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Verify Homebrew installation
+$ brew doctor
+
+Updating Homebrew
+$ brew update
+
+Upgrade all individual packages and formula
+$ brew upgrade
+
+List of all your installed Homebrew packages.
+$ brew list
+
+List the items installed using Homebrew Cask.
+$ brew list --cask
+
+
+
+

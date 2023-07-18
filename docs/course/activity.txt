@@ -1,0 +1,12 @@
+
+setup git attributes
+setup brew
+setup python
+setup vscode
+setup virtual environment
+create hello.py
+
+uvicorn app.firststeps.hello:greeting
+uvicorn app.firststeps.hello:greeting --reload
+
+

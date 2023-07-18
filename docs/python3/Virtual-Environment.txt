@@ -1,0 +1,6 @@
+Create virtual environment
+$ python3 -m venv venv
+
+Enable virtual environment for command line
+$ source /Users/shivjalli/projects/fastapi-003/venv/bin/activate
+
