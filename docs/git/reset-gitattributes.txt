@@ -1,0 +1,33 @@
+
+
+
+Based on the new attribute settings, any text files containing CRLFs should be normalized by Git. If this won't happen automatically, you can refresh a repository manually after changing line endings, so you can re-scan and commit the working directory by the following steps (given clean working directory):
+
+$ echo "* text=auto" >> .gitattributes
+$ rm .git/index     # Remove the index to force Git to
+$ git reset         # re-scan the working directory
+$ git status        # Show files that will be normalized
+$ git add -u
+$ git add .gitattributes
+$ git commit -m "Introduce end-of-line normalization"
+or as per GitHub docs:
+
+refreshfreshing a repository after changing line endings
+https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings#refreshing-a-repository-after-changing-line-endings
+
+
+
+git add . -u
+git commit -m "Saving files before refreshing line endings"
+git rm --cached -r . # Remove every file from Git's index.
+git reset --hard # Rewrite the Git index to pick up all the new line endings.
+git add . # Add all your changed files back, and prepare them for a commit.
+git commit -m "Normalize all the line endings" # Commit the changes to your repository.
+See also: @Charles Bailey post.
+
+$ git add --renormalize .
+$ git status        # Show files that will be normalized
+$ git commit -m "Introduce end-of-line normalization"
+
+
+
