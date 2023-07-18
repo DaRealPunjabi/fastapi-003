@@ -1,3 +1,9 @@
+# https://github.com/alexkaratarakis/gitattributes/blob/master/Web.gitattributes
+# https://mirrors.edge.kernel.org/pub/software/scm/git/docs/gitattributes.html#_defining_a_custom_hunk_header
+# https://github.com/alexkaratarakis/gitattributes/tree/master
+# https://git-scm.com/docs/gitattributes
+# https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
+
 Based on the new attribute settings, any text files containing CRLFs should be normalized by Git. If this won't happen automatically, you can refresh a repository manually after changing line endings, so you can re-scan and commit the working directory by the following steps (given clean working directory):
 
 $ echo "* text=auto" >> .gitattributes
@@ -26,5 +32,11 @@ $ git add --renormalize .
 $ git status        # Show files that will be normalized
 $ git commit -m "Introduce end-of-line normalization"
 
+list all files having a git attribute set
+$ git ls-files | xargs git check-attr myAttr
+
+$ git ls-files | xargs git check-attr myAttr | grep -v 'unspecified$'
+
+myAttr = binary
 
 
